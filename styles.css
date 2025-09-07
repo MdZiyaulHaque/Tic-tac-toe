@@ -1,90 +1,161 @@
-*,*::before,*::after {
+/* Reset and Base Styles */
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', 'sans-serif';
+    font-family: 'Poppins', sans-serif;
 }
 
-.wrapper{
-    width: 100vw;
-    height: 100vh;
+body {
+    min-height: 100vh;
     background-image: url(./assets/gradient-bg.jpg);
     background-size: cover;
     background-position: center;
     display: grid;
     place-items: center;
+    overflow-x: hidden;
 }
 
-.game-info{
-    color:white;
-    position:absolute;
-    top:3rem;
-    left:50%;
-    transform:translateX(-50%);
+h1 {
+    color: #fff;
+}
+
+
+/* Wrapper */
+
+.wrapper {
+    width: 100%;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+}
+
+
+/* Game Info Display */
+
+.game-info {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
     background-color: rgba(255, 255, 255, 0.15);
     border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.25);
-    padding: 0.5rem 3rem;
-    /* text-align:center; */
-
+    padding: 0.6rem 2.5rem;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.tic-tac-toe{
-    width:90%;
-    max-width:20rem;
-    background-color: rgba(255, 255, 255, 0.15);
+
+/* Tic Tac Toe Board */
+
+.tic-tac-toe {
+    width: 90%;
+    max-width: 320px;
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.25);
-    padding: 2rem;
+    padding: 1.5rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
     aspect-ratio: 1/1;
+    backdrop-filter: blur(8px);
 }
 
 
-.box{
-    position:relative;
-    width:100%;
-    aspect-ratio: 1/1;
+/* Box Styles */
+
+.box {
+    width: 100%;
+    aspect-ratio: 1 / 1;
     cursor: pointer;
-    font-size: 3rem;
-    color:white;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 2px solid white;
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: background-color 0.3s ease;
 }
 
-.box1, .box2, .box4, .box5{
-    border-right:2px solid white;
-    border-bottom:2px solid white;
+.box:hover {
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
-.box3, .box6{
-    border-bottom: 2px solid white;
-}
 
-.box7, .box8{
-    border-right:2px solid white;
-}
+/* Button */
 
-.btn{
-    color:white;
-    position: absolute;
-    bottom:3rem;
-    left:50%;
-    transform:translateX(-50%);
+.btn {
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
     background-color: rgba(255, 255, 255, 0.15);
     border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.25);
-    padding: 0.5rem 2rem;
-    cursor:pointer;
+    padding: 0.6rem 2rem;
+    cursor: pointer;
     display: none;
+    backdrop-filter: blur(6px);
+    transition: background-color 0.3s ease;
 }
 
-.btn.active{
-    display: flex;
+.btn.active {
+    display: inline-flex;
 }
 
-.win{
-    background-color: rgba(0, 255, 0, 0.3);
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+
+/* Win Highlight */
+
+.win {
+    background-color: rgba(0, 255, 0, 0.3) !important;
+    font-weight: 700;
+    color: #00ff00;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 600px) {
+    .game-info {
+        font-size: 1rem;
+        padding: 0.5rem 1.5rem;
+    }
+    .tic-tac-toe {
+        padding: 1rem;
+        gap: 0.4rem;
+        max-width: 280px;
+    }
+    .box {
+        font-size: 2.2rem;
+    }
+    .btn {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .game-info {
+        font-size: 0.95rem;
+    }
+    .box {
+        font-size: 2rem;
+    }
+    .btn {
+        padding: 0.4rem 1.2rem;
+        font-size: 0.85rem;
+    }
 }

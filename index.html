@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Tic Tac Toe | Classic 2-Player Game</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="styles.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="icon" href="./assets/tic-tac-toe.png" type="image/png">
+
 </head>
+
 <body>
-    
-    <div class="wrapper">
+    <main class="wrapper">
 
-        <p class="game-info"></p>
+        <h1 class="title">Tic Tac Toe</h1>
+        <p class="game-info" aria-live="polite">Player X's Turn</p>
 
-        <div class="tic-tac-toe">
-            <div class="box box1"></div>
-            <div class="box box2"></div>
-            <div class="box box3"></div>
-            <div class="box box4"></div>
-            <div class="box box5"></div>
-            <div class="box box6"></div>
-            <div class="box box7"></div>
-            <div class="box box8"></div>
-            <div class="box box9"></div>
-        </div>
+        <section class="tic-tac-toe" role="grid" aria-label="Tic Tac Toe Board">
+            <button class="box" data-index="0" aria-label="Top-left cell"></button>
+            <button class="box" data-index="1" aria-label="Top-center cell"></button>
+            <button class="box" data-index="2" aria-label="Top-right cell"></button>
+            <button class="box" data-index="3" aria-label="Middle-left cell"></button>
+            <button class="box" data-index="4" aria-label="Center cell"></button>
+            <button class="box" data-index="5" aria-label="Middle-right cell"></button>
+            <button class="box" data-index="6" aria-label="Bottom-left cell"></button>
+            <button class="box" data-index="7" aria-label="Bottom-center cell"></button>
+            <button class="box" data-index="8" aria-label="Bottom-right cell"></button>
+        </section>
 
-        <button class="btn">New Game</button>
-    </div>
+        <button class="btn" id="newGameBtn">🔄 New Game</button>
+    </main>
+
     <script src="index.js"></script>
 </body>
+
 </html>
